@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>BOM的侧室们</title>
+  <!--要记得首先打开控制台哟~-->
+
+  <script>
+    // screen对象
+    console.log(screen);
+    console.log(screen.width);//宽度            console.log(screen.height);//高度            console.log(screen.availHeight);//可用高度=屏幕高度-底部任务栏            console.log(screen.availWidth);//可用宽度
+
+    // location对象
+    //   完整的url路径：
+    //   协议：// 主机名（IP地址）:端口号（默认80端口）/文件路径?传递的参数（参数名0=参数值0&参数名1=参数值1）#锚点
+    console.log(location);
+    console.log(location.href);//完整路径
+    console.log(location.protocol);//路径协议http: https: ftp: file: mailto:
+    console.log(location.pathname);//路径部分  /开始
+    console.log(location.port);//端口号
+    console.log(location.search);//从?开始往后的部分
+    console.log(location.hostname);//IP地址
+    console.log(location.host);//主机名+端口号
+    console.log(location.hash);//从#开始的锚点
+    // 使用JS设置页面跳转
+    //    window.location="http://www.baidu.com";
+
+
+    function locationReload(){                //重新加载当前页面                location.reload(true);//reload(true)表示从服务器重新加载当前页面；reload()在本地刷新当前页面            }
+      function locationAssign(){
+        location.assign("http://www.baidu.com");    //加载新的文档，替换以后可以回退            }
+        function locationReplace(){
+          location.replace("http://www.baidu.com");//使用新的文档替换当前文档，替换后不能回退            }
+          // history
+          // length : 浏览历史列表的个数
+          // history.forward(); ： 前进到前一个页面
+          // history.back(); ： 后退到后一个页面
+          // history.go(); : 跳转到历史浏览历史的任意位置；当前页为第0个，前一个页面为第1个，后一个页面为第-1个
+          console.log(history.length);
+          function historyForword(){
+            history.forward();
+          }            function historyBack(){
+            history.back();
+          }            function historyGo(){
+            history.go();                // 0
+            // 1 = history.forward();
+            // -1 = history.back();            }
+            // Navigator            console.log(navigator.appName);//产品名称            console.log(navigator.appVersion);//产品版本号            console.log(navigator.userAgent);//用户代理信息            console.log(navigator.platform);//系统代理平台
+            console.log(navigator.plugins);//检查浏览器安装的插件信息
+            // 返回一个数组，检测浏览器安装的所有插件(↓主要属性↓)
+            // description ： 插件描述信息
+            // filename ： 插件在本地磁盘的文件名
+            // length ： 插件的个数
+            // name ： 文件名
+            console.log(navigator.mimeTypes)}
+        }
+      }
+    }
+    //浏览器插件所支持的文件类型(↓主要属性↓)
+    // description：MIME类型描述
+    // enabledPlugin：支持此类型的浏览器插件
+    // suffixes：此类型可能的后缀名
+    // type：MIME类型的写法，例如：image/x-icon text/css
+  </script>
+
+</head>
+<body>
+
+<button onclick="locationAssign()">加载新的文档</button>
+<br />
+
+<button onclick="locationReload()">重新加载当前文档</button>
+<br />
+
+<button onclick="locationReplace()">使用新的文档替换当前文档</button>
+<br />
+
+<button onclick="historyForword()">这个是historyForword</button>
+<br />
+
+<button onclick="historyBack()">这个是historyBack</button>
+<br />
+
+<button onclick="historyGo()">这个是historyGo</button>
+
+</body>
+</html>

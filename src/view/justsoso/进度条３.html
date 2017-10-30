@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>www.loading.io</title>
+  <script src="../../js/jquery.min.js"></script>
+</head>
+<style>
+  *{margin: 0;    padding:0;}
+
+  .loading{width:100%;height:100%;position: fixed;top:0;left:0;
+    z-index: 100;background: #fff;
+  }
+  .pic{width: 100px;height: 100px;  position: absolute;top:0;
+    bottom:0;left:0;right:0;margin:auto;
+    font-size:30px;text-align: center;line-height: 100px}
+  .pic span{display: block;width:80px;height:80px;
+    position: absolute;top:10px;left:10px;
+    border-radius:50%;-webkit-box-shadow:0 3px #666;box-shadow:0 3px #666;
+    -webkit-animation:rotate 1s infinite linear;
+    animation:rotate 1s infinite linear
+  }
+  @-webkit-keyframes rotate{
+    0%{-webkit-transform:rotate(0deg);transform:rotate(0deg);}
+    100%{-webkit-transform:rotate(360deg);transform:rotate(360deg);}
+  }
+  @keyframes rotate{
+    0%{-webkit-transform:rotate(0deg);transform:rotate(0deg);}
+    100%{-webkit-transform:rotate(360deg);transform:rotate(360deg);}
+  }
+
+</style>
+<script>
+  $(function(){
+      var jdt=
+        `
+          <div class="loading">
+            <div class="pic">
+              <span></span>
+              <b>0%</b>
+            </div>
+          </div>
+        `;
+      $('body').prepend(jdt);
+    var img=$('img');
+    var len=img.length;
+    var num=0;
+    img.each(function (i) {
+      var oImg=new Image();
+      oImg.onload=function(){
+        num++;
+        $('.loading b').html(parseInt(num/len*100)+'%');
+        console.log($('.loading b').html());
+        if($('.loading b').html()=='100%'){
+          $('.loading').remove()
+        }
+      };
+      oImg.src=img[i].src;
+    })
+  })
+</script>
+<body>
+
+<p>autoprefixer.github.io  这个网站是做css兼容性的</p>
+<img src="../../imgs/lunbo/lun1.png" alt="">
+<img src="../../imgs/lunbo/lun2.png" alt="">
+<img src="../../imgs/lunbo/lun3.png" alt="">
+<img src="../../imgs/lunbo/lun4.png" alt="">
+</body>
+</html>
