@@ -30,41 +30,42 @@
   }
 
 </style>
-<script>
-  $(function(){
-      var jdt=
-        `
-          <div class="loading">
-            <div class="pic">
-              <span></span>
-              <b>0%</b>
-            </div>
-          </div>
-        `;
-      $('body').prepend(jdt);
-    var img=$('img');
-    var len=img.length;
-    var num=0;
-    img.each(function (i) {
-      var oImg=new Image();
-      oImg.onload=function(){
-        num++;
-        $('.loading b').html(parseInt(num/len*100)+'%');
-        console.log($('.loading b').html());
-        if($('.loading b').html()=='100%'){
-          $('.loading').remove()
-        }
-      };
-      oImg.src=img[i].src;
-    })
-  })
-</script>
+<!--<script>-->
+  <!--$(function(){-->
+      <!--var jdt=-->
+        <!--`-->
+          <!--<div class="loading">-->
+            <!--<div class="pic">-->
+              <!--<span></span>-->
+              <!--<b>0%</b>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--`;-->
+      <!--$('body').prepend(jdt);-->
+    <!--var img=$('img');-->
+    <!--var len=img.length;-->
+    <!--var num=0;-->
+    <!--img.each(function (i) {-->
+      <!--var oImg=new Image();-->
+      <!--oImg.onload=function(){-->
+        <!--num++;-->
+        <!--$('.loading b').html(parseInt(num/len*100)+'%');-->
+        <!--console.log($('.loading b').html());-->
+        <!--if($('.loading b').html()=='100%'){-->
+          <!--$('.loading').remove()-->
+        <!--}-->
+      <!--};-->
+      <!--oImg.src=img[i].src;-->
+    <!--})-->
+  <!--})-->
+<!--</script>-->
 <body>
 
 <p>autoprefixer.github.io  这个网站是做css兼容性的</p>
-<img src="../../imgs/lunbo/lun1.png" alt="">
+
 <img src="../../imgs/lunbo/lun2.png" alt="">
 <img src="../../imgs/lunbo/lun3.png" alt="">
 <img src="../../imgs/lunbo/lun4.png" alt="">
+<img src="../../imgs/lunbo/lun1.png" alt="">
 </body>
 </html>

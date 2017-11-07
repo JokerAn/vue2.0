@@ -34,12 +34,12 @@
       return{
         pop1:{
           popTitle:'',
-          numTop:'',//其他的参数,目前没用到
+          Drag:false,
           fun:this.pop1fun
         },
         pop2:{
           popTitle:'',
-          numTop:'',
+          Drag:true,
           fun:this.pop2fun
         },
         msg:''
@@ -70,6 +70,16 @@
     },
     created(){
 
+//      var d=setInterval(function(){
+//        var a=new Date().getHours()+""+new Date().getMinutes()+""+new Date().getSeconds();
+//        if(a=='95959'){
+//          window.location.reload();
+//        }else{console.log(a)}
+//      },950);
+//      function c(aa){
+//        clearInterval(aa);
+//      }
+
     },
     mounted:function () {
       this.$nextTick(function () {
@@ -85,4 +95,5 @@
 
   }
 </script>
-<style></style>
+<style>
+</style>

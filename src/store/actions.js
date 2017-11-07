@@ -8,6 +8,9 @@ export default{
   pop:({commit},res)=>{
     commit('pop',res)
   },
+  autoElement:({commit},res)=>{
+    commit('autoElement',res)
+  },
 
   // fenyedabao:({commit},res)=>{//带参数
   //   commit('fenyedabao',res)

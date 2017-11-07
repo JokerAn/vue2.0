@@ -25,6 +25,7 @@ import Lunbo2 from '../view/lunbo/lunbo2.vue'
 import Mobile from '../view/justsoso/main.vue'
 import Promise from '../view/justsoso/Promise.vue'
 import LeavePage from '../view/justsoso/leavePage.vue'
+import Splice from '../view/justsoso/splice.vue'
 
 
 export default {//固定格式
@@ -37,6 +38,7 @@ export default {//固定格式
     { path: '/mobile', component: Mobile},
     { path: '/promise', component: Promise},
     { path: '/leavePage', component: LeavePage},
+    { path: '/splice', component: Splice},
 
 
 

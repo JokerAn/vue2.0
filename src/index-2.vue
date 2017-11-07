@@ -7,6 +7,7 @@
     <button @click="goToPage(['lunbo2','轮播图2'])">轮播图2</button>
     <button @click="goToPage(['mobile','我是移动主页'])">移动主页</button>
     <button @click="goToPage(['promise','我是Promise'])">Promise</button>
+    <button @click="goToPage(['splice','splice...'])">Splice...</button>
     <button @click="goToPage(['leavePage','是否离开页面'])">是否离开页面</button>
     <button @click="refresh">refresh</button>
 

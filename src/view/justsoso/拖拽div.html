@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+  <title>nihao</title>
+
+</head>
+<style>
+  .zhuti{position: absolute;top:100px;left:100px;width:300px;height:300px;background:#666;}
+</style>
+<body>
+<p class="xxyy"></p>
+<div class="zhuti">
+  <!--<p>document.documentElement.clientWidth:可视屏幕的宽 不包含控制台</p>-->
+  <h2 class="title" style="border: 1px solid #dddddd;padding: 5px 0;margin: 0 0;cursor: move">title</h2>
+  <ul>
+    <li>123123123</li>
+    <li>123123123</li>
+    <li>
+      <p>564654</p>
+      <div>
+        <img src="../../imgs/lunbo/lun1.png" width="100" height="100" alt="">
+
+      </div>
+    </li>
+  </ul>
+
+
+</div>
+<div class="oDiv"></div>
+</body>
+<script>
+  //  zhuti_Top=parseInt(getComputedStyle(zhuti).top);
+  // var phtml=document.getElementsByClassName('xxyy')[0];
+  function moves(allDiv,allDiv_title){
+    var isDown=false;//是否恩下鼠标了
+    var zhuti=document.getElementsByClassName(allDiv)[0];
+    var title=document.getElementsByClassName(allDiv_title)[0];
+    title.onmousedown=function(e){//鼠标刚刚恩下去的时候
+      isDown=true;
+      var chajuLeft=e.clientX-zhuti.offsetLeft; //刚开始鼠标相对左上角的偏移 left  ==>最后不移动了 让div仍相对于鼠标的位置不变 就可以得到最终的div的位置
+      var chajuTop=e.clientY-zhuti.offsetTop;   //刚开始鼠标相对左上角的偏移 top   ==>最后不移动了 让div仍相对于鼠标的位置不变 就可以得到最终的div的位置
+      document.onmousemove=function(e){
+        var mouseX=e.clientX; //鼠标实时的位置
+        var mouseY=e.clientY; //鼠标实时的位置
+        var linjiezhixia=document.documentElement.clientHeight-parseInt(getComputedStyle(zhuti).height);//div能移动的 最下边临界值
+        var linjiezhiyou=document.documentElement.clientWidth-parseInt(getComputedStyle(zhuti).width);  //div能移动的 最右边临界值
+
+        //被移动div的范围是 top ：最小是0 最大是 浏览器可视区域的高度-被移动div的高度 == linjiezhixia
+        //被移动div的范围是 left：最小是0 最大是 浏览器可视区域的宽度-被移动div的宽度 == linjiezhiyou
+        //mouseY-chajuTop  => 鼠标现在的位置-刚开始相对左上角的偏移 == 最终(不考虑是否在可是区域内)左上角的位置
+        //mouseX-chajuLeft => 鼠标现在的位置-刚开始相对左上角的偏移 == 最终(不考虑是否在可是区域内)左上角的位置
+        var lastmovetop;  //最终（在可是区域内）左上角的位置-top
+        var lastmoveleft; //最终（在可是区域内）左上角的位置-left
+        if(mouseY-chajuTop<=0){
+          lastmovetop=0
+        }else if(mouseY-chajuTop>=(linjiezhixia)){//进入这个 就一定是没进入上一个 也就是 mouseY-chajuTop准比零大
+          lastmovetop=(linjiezhixia)
+        }else{
+          lastmovetop=mouseY-chajuTop;
+        }
+        //left与上边一模一样 下边的这是精简版的写法
+        //linjiezhiyou 可视区域的高度 - div的高度 ==  最下边的临界值
+
+        lastmoveleft=Math.min(//第二步 先将这个 linjiezhiyou 与 最终(不考虑是否在可是区域内)左上角的位置 对比 取出最小值 （也就是 绝对在临界值之内 ）
+          linjiezhiyou ,
+          Math.max(0 , (mouseX-chajuLeft) ) //第一步 先将这个 0 与 最终(不考虑是否在可是区域内)左上角的位置 对比 取出最大值 也就是如果小于0 就取 0 总之这一步取出的值绝对是大于等于 0 的
+        );
+
+        if(isDown){
+          zhuti.style.top=lastmovetop+'px';
+          zhuti.style.left=lastmoveleft+'px';
+        }
+      };
+    };
+    document.onmouseup=function(e){//鼠标刚刚恩下去的时候
+      isDown=false;
+    }
+  }
+  moves('zhuti','title');
+
+
+
+</script>
+</html>
