@@ -10,6 +10,14 @@
     <button @click="goToPage(['splice','splice...'])">Splice...</button>
     <button @click="goToPage(['leavePage','是否离开页面'])">是否离开页面</button>
     <button @click="refresh">refresh</button>
+    <button @click="goToPage(['toast'])">MintUI-Toast</button>
+    <button @click="goToPage(['indicator'])">MintUI-Indicator</button>
+    <button @click="goToPage(['loadmore'])">MintUI-Loadmore</button>
+    <button @click="goToPage(['loadmore2'])">MintUI-下拉刷新</button>
+    <button @click="goToPage(['loadmore3'])">MintUI-上拉刷新</button>
+    <button @click="goToPage(['infinite'])">MintUI-Infinite</button>
+    <button @click="goToPage(['infinite'])">ssssss</button>
+    <button @click="goToPage(['cool'])">cool</button>
 
   </div>
 </template>

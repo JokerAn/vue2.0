@@ -61,6 +61,9 @@
       </div>
 
     </div>
+    <div style="width: 100px;height:500px;border: 1px solid #aaa;">sdf</div>
+    <div style="width: 100px;height:500px;border: 1px solid #aaa;">sdf</div>
+    <div style="width: 100px;height:500px;border: 1px solid #aaa;">sdf</div>
   </div>
 </template>
 
@@ -87,7 +90,7 @@
       lunboIndexCircle(index,time1,time2) {
         //主定时器　图片显示，隐藏的时间可以稍微　长一点　效果好看
         //副定时器　图片显示，隐藏的时间需要　短一点　展现出立马下一张的感觉
-        $("ol.lunbo_imgs li").eq(index).siblings().fadeOut(time1);
+        $("ol.lunbo_imgs li").eq(index).siblings().fadeOut(0);
         $("ol.lunbo_imgs li").eq(index).fadeIn(time2);
         $(".lunbo_title li").removeClass('active');
         $(".lunbo_title li").eq(index).addClass('active');

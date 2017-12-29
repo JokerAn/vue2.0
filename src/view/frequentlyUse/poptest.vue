@@ -6,6 +6,7 @@
     <button @click="theOne">点击我弹出弹出框-one</button>
     <button @click="refresh">点击我刷新页面</button>
     <button @click="theTwo">点击我弹出弹出框-two</button>
+    <button @click="changevuexmsg">改变全局数据-two</button>
     <p style="text-align: center">获取全局数据： {{asdf}}</p>
 
 
@@ -66,6 +67,9 @@
       },
       changeMsg(){
         this.msg='我被改变了'
+      },
+      changevuexmsg(){
+        this.asdf='12312313'
       },
     },
     created(){

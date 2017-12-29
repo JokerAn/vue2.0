@@ -26,6 +26,13 @@ import Mobile from '../view/justsoso/main.vue'
 import Promise from '../view/justsoso/Promise.vue'
 import LeavePage from '../view/justsoso/leavePage.vue'
 import Splice from '../view/justsoso/splice.vue'
+import Toast from '../view/mintUI/Toast.vue'
+import Indicator from '../view/mintUI/Indicator.vue'
+import Loadmore from '../view/mintUI/Loadmore.vue'
+import Loadmore2 from '../view/mintUI/loadermore2.vue'
+import Loadmore3 from '../view/mintUI/loadermore3.vue'
+import Infinite from '../view/mintUI/infinte_scroll.vue'
+import Cool from '../view/mintUI/cool.vue'
 
 
 export default {//固定格式
@@ -39,6 +46,13 @@ export default {//固定格式
     { path: '/promise', component: Promise},
     { path: '/leavePage', component: LeavePage},
     { path: '/splice', component: Splice},
+    { path: '/toast', component: Toast},
+    { path: '/indicator', component: Indicator},
+    { path: '/loadmore', component: Loadmore},
+    { path: '/loadmore2', component: Loadmore2},
+    { path: '/loadmore3', component: Loadmore3},
+    { path: '/infinite', component: Infinite},
+    { path: '/cool', component: Cool},
 
 
 

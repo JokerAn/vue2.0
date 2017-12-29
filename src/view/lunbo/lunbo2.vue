@@ -1,5 +1,7 @@
 <template>
   <div class="hello">
+    <h3>lun1　如果轮播图只显示了一半　下一张会出现跳转锚点的效果　无法解决　　但是本页面lun2不会　</h3>
+    <h3>应该是因为lun1　用的fadein会出现短暂的轮播图显示的div高度为0　再次出现fadeout的时候在填充进去　虽然肉眼看不出来但是程序会这样执行　他会重新定位页面．．．．．　</h3>
     <p @click="lunstart" style="text-align: center">{{msg}}</p>
     <div class="lunbo">
 
@@ -60,6 +62,9 @@
       </div>
 
     </div>
+    <div style="width: 100px;height:500px;border: 1px solid #aaa;">sdf</div>
+    <div style="width: 100px;height:500px;border: 1px solid #aaa;">sdf</div>
+    <div style="width: 100px;height:500px;border: 1px solid #aaa;">sdf</div>
   </div>
 </template>
 

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>www.loading.io</title>
+  <script src="../../js/jquery.min.js"></script>
+</head>
+<style>
+  *{margin: 0;    padding:0;}
+  .times{
+    border:1px solid;width:5px;height:5px;position: relative;
+  }
+</style>
+
+<body>
+
+<p>autoprefixer.github.io  这个网站是做css兼容性的</p>
+<div class="times">
+
+</div>
+<script>
+  var times= (times)=>{
+    var ss=0;
+    setInterval(function(){
+      var hudu = (2*Math.PI / 360) * 6 * ss;
+
+      var X = 100 + Math.sin(hudu) * 50;
+
+      var Y = 100 - Math.cos(hudu) * 50    //  注意此处是“-”号，因为我们要得到的Y是相对于（0,0）而言的。
+      $('.times').css({
+        top:Y,
+        left:X
+      });
+      ss++;
+    },100)
+
+  }
+  times();
+</script>
+</body>
+</html>

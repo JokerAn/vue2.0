@@ -44,7 +44,20 @@ export default {
 
   },
   activated(){
-      this.msg=this.$route.query.data;
+    this.msg=this.$route.query.data;
+    this.getNewsTitle()
+  },
+  mounted(){
+    console.log($('body>div')[0].id)
+var me=this;
+    $.get(me.$url.newsTitle,function(res){
+      console.log(res)
+      me.newsTitle=res.data.message
+    },function(res){
+      console.log(res);
+    });
+
+    this.msg=this.$route.query.data;
     this.getNewsTitle()
   }
 }
